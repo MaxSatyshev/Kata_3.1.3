@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div>
+  <h2>User By Id Page</h2>
+</div>
+<table class="table table-black">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Surname</th>
+    <th scope="col">Age</th>
+    <th scope="col">PhoneNumber</th>
+    <th scope="col">Password</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:object="${user}">
+    <td th:utext="${user.getId()}">Id</td>
+    <td th:utext="${user.getUsername()}">Name</td>
+    <td th:utext="${user.getSurname()}">Surname</td>
+    <td th:utext="${user.getAge()}">Age</td>
+    <td th:utext="${user.getPhoneNumber()}">PhoneNumber</td>
+    <td th:utext="${user.getPassword()}">Password</td>
+  </tr>
+  </tbody>
+</table>
+<br/>
+<a th:href="@{/admin/{id}/edit(id=${user.getId()})}">Edit</a>
+
+</body>
+</html>
